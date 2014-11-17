@@ -1,0 +1,109 @@
+// Variables | Font Families
+$font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$font-family-serif: 'Times New Roman', serif;
+
+// Variables | Font Weights
+$font-weight-light: 300;
+$font-weight-book: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+$font-weight-super-bold: 800;
+
+// Placeholders | Font Families
+%font-family-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+%font-family-serif {
+  font-family: $font-family-serif;
+}
+
+// Placeholders | Font Weights
+%font-weight-light {
+  font-weight: $font-weight-light;
+}
+
+%font-weight-book {
+  font-weight: $font-weight-book;
+}
+
+%font-weight-medium {
+  font-weight: $font-weight-medium;
+}
+
+%font-weight-bold {
+  font-weight: $font-weight-bold;
+}
+
+%font-weight-super-bold {
+  font-weight: $font-weight-super-bold;
+}
+
+// Placeholders | Font Styles
+%font-style-normal {
+  font-style: normal;
+}
+
+%font-style-italic {
+  font-style: italic;
+}
+
+%font-style-underline {
+  text-decoration: underline;
+}
+
+// Placeholders | Fonts
+%font-sans-serif-light {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-light;
+}
+
+%font-sans-serif-book {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-book;
+}
+
+%font-sans-serif-medium {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-medium;
+}
+
+%font-sans-serif-bold {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-bold;
+}
+
+%font-sans-serif-super-bold {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-super-bold;
+}
+
+%font-serif-light {
+  @extend %font-family-serif;
+  @extend %font-weight-light;
+}
+
+%font-serif-book {
+  @extend %font-family-serif;
+  @extend %font-weight-book;
+}
+
+%font-serif-medium {
+  @extend %font-family-serif;
+  @extend %font-weight-medium;
+}
+
+%font-serif-bold {
+  @extend %font-family-serif;
+  @extend %font-weight-bold;
+}
+
+%font-serif-super-bold {
+  @extend %font-family-serif;
+  @extend %font-weight-super-bold;
+}
+
+$base-font-size:1em;
+$base-font-size-px-mobile:16px;
+$base-font-size-px-tablet:18px;
+$base-font-size-px-desktop:20px;

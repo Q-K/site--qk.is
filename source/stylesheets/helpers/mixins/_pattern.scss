@@ -1,0 +1,525 @@
+/**
+ * ⌂-pattern
+ *
+ */
+@mixin ⌂-pattern($pattern, $modifier, $context: all) {
+
+  @if $pattern == 'navigation' {
+
+    @if $modifier == "slideDown" {
+
+      // Pattern
+      .navigation {
+
+        &.navigation--primary {
+          @include position(fixed, 0 0 null null); 
+          @include size(100% auto);
+          @include padding(6em null 1em null);
+          @include ⌂-background($color-navigation-background);
+          @include transform(translateY(-100%));
+          @include transition(transform 500ms $ease-in-out-quint);
+
+          .navigation__link {
+            display: block;
+            @include padding(1em 1em 1em 1em);
+            @include ⌂-background($color-navigation-item);
+            color: $color-navigation-text;
+            text-align: center;
+            text-transform: uppercase;
+
+            &:hover {
+              @include ⌂-background($color-navigation-item-hover);
+              color: $color-navigation-text-hover;
+            }
+          }
+        }
+      }
+
+      // States
+      .page {
+
+        &.active--navigation {
+
+          .navigation--primary {
+            @include transform(translateY(0%));
+          }
+        }
+      }
+    }
+
+    @if $modifier == "slideLeft" {
+
+      // Pattern
+      .navigation {
+
+        &.navigation--primary {
+          @include position(fixed, 0 null null 0); 
+          @include size(em(220) 100%);
+          @include ⌂-background(darken($color-theme-primary, 5%));
+          @include padding(1em null null null);
+
+          .navigation__item {
+          }
+
+          .navigation__link {
+            @include padding(.5em 1em .5em 1em);
+            display: block;
+            @include ⌂-background(darken($color-theme-primary, 5%));
+            color: $color-text-invert;
+
+            &:hover {
+              @include ⌂-background($color-theme-primary);
+            }
+          }
+
+          .navigation__copy {
+
+          }
+        }
+      }
+
+      // States
+      .page {
+
+        .header {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        .main {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        .footer {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        &.active--navigation {
+          overflow-x: hidden;
+
+          .toggle {
+            
+            &.toggle--navigation {
+
+              &:before {
+                @include ⌂-icon("cancel", 22, $color-text-invert);
+                @include animation-name(rotate);
+                @include animation-duration(100ms);
+                @include animation-timing-function(linear);
+                @include animation-iteration-count(1);
+              }
+            }
+          }
+
+          .navigation--primary {
+          }
+
+          .header, .main, .footer {
+            @include transform(translateX((em(220))));
+          }
+        }
+      }
+    }
+
+    @if $modifier == "revealRight" {
+
+      // Pattern
+      .navigation {
+
+        &.navigation--primary {
+          @include position(fixed, 0 0 null null); 
+          @include size(em(220) 100%);
+          @include ⌂-background(darken($color-theme-primary, 5%));
+          @include padding(1em null null null);
+
+          .navigation__item {
+          }
+
+          .navigation__link {
+            @include padding(.5em 1em .5em 1em);
+            display: block;
+            @include ⌂-background(darken($color-theme-primary, 5%));
+            color: $color-text-invert;
+
+            &:hover {
+              @include ⌂-background($color-theme-primary);
+            }
+          }
+
+          .navigation__copy {
+
+          }
+        }
+      }
+
+      // States
+      .page {
+
+        .header {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        .main {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        .footer {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        &.active--navigation {
+
+          .toggle {
+            
+            &.toggle--navigation {
+
+              &:before {
+                @include ⌂-icon("cancel", 22, $color-text-invert);
+                @include animation-name(rotate);
+                @include animation-duration(100ms);
+                @include animation-timing-function(linear);
+                @include animation-iteration-count(1);
+              }
+            }
+          }
+
+          .navigation--primary {
+          }
+
+          .header, .main, .footer {
+            @include transform(translateX(-(em(220))));
+          }
+        }
+      }
+    }
+
+    @if $modifier == "revealLeft" {
+
+      // Pattern
+      .navigation {
+
+        &.navigation--primary {
+          @include position(fixed, 0 null null 0); 
+          @include size(em(220) 100%);
+          @include ⌂-background(darken($color-theme-primary, 5%));
+          @include padding(1em null null null);
+
+          .navigation__item {
+          }
+
+          .navigation__link {
+            @include padding(.5em 1em .5em 1em);
+            display: block;
+            @include ⌂-background(darken($color-theme-primary, 5%));
+            color: $color-text-invert;
+
+            &:hover {
+              @include ⌂-background($color-theme-primary);
+            }
+          }
+
+          .navigation__copy {
+
+          }
+        }
+      }
+
+      // States
+      .page {
+        overflow-x: hidden;
+
+        .header {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        .main {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        .footer {
+          @include transform(translateX(0px));
+          @include transition(transform 500ms $ease-in-out-quint);
+        }
+
+        &.active--navigation {
+
+          .toggle {
+            
+            &.toggle--navigation {
+
+              &:before {
+                @include ⌂-icon("cancel", 22, $color-text-invert);
+                @include animation-name(rotate);
+                @include animation-duration(100ms);
+                @include animation-timing-function(linear);
+                @include animation-iteration-count(1);
+              }
+            }
+          }
+
+          .navigation--primary {
+          }
+
+          .header, .main, .footer {
+            @include transform(translateX((em(220))));
+          }
+        }
+      }
+    }
+  }
+
+  @if $pattern == "toggle" {
+
+    @if $modifier == "right" {
+
+      @include position(absolute, 0 0 null null);
+    }
+
+    @if $modifier == "right--1" {
+
+      @include position(absolute, 0 2.5em null null);
+    }
+
+    @if $modifier == "left" {
+
+      @include position(absolute, 0 null null 0);
+    }
+
+    @if $modifier == "left--1" {
+
+      @include position(absolute, 0 null null 2.5em);
+    }
+  }
+
+  @if $pattern == "header" {
+
+    @if $modifier == "default" {
+
+      @if $context == "all" {
+
+        @include position(relative, null null null null);
+        @include ⌂-layer(loft);
+        @include ⌂-background($color-header-background, 1);
+
+        .header__inner {
+          @include position(relative, null null null null);
+        }
+      }
+    }
+
+    @if $modifier == "fixed" {
+
+      @include position(fixed, null null null null);
+      @include size(100% null);
+      @include ⌂-layer(loft);
+      @include ⌂-background($color-header-background, 1);
+
+      .header__inner {
+        @include ⌂-container(pseudo);
+      }
+
+      @include media($mq-desk) {
+
+        .header__inner {
+          @include ⌂-container;
+        }
+      }
+    }
+  }
+
+  @if $pattern == "main" {
+
+    @if $modifier == "default" {
+
+      @include position(relative, null null null null);
+      @include ⌂-layer(ground);
+    }
+  }
+
+  @if $pattern == "footer" {
+
+    @if $modifier == "default" {
+
+      @include position(relative, null null null null);
+      @include ⌂-layer(ground);
+    }
+  }
+
+  @if $pattern == "slide" {
+
+    @if $modifier == "no-cta" {
+
+      .slide__cta {
+        display: none;
+      }
+    }
+
+    @if $modifier == "ltr" {
+
+      @include media($mq-lap) {
+
+        .slide__heading {
+          @include span-columns(6);
+        }
+
+        .slide__subheading {
+          @include span-columns(6);
+          clear: left;
+        }
+
+        .slide__copy {
+          @include span-columns(6);
+          clear: left;
+        }
+
+        .slide__cta {
+          float: left;
+          clear: left;
+        }
+      }
+    }
+
+    @if $modifier == "rtl" {
+
+      @include media($mq-lap) {
+
+        .slide__heading {
+          @include span-columns(6);
+          @include shift(6);
+        }
+
+        .slide__subheading {
+          @include span-columns(6);
+          @include shift(6);
+          clear: left;
+        }
+
+        .slide__copy {
+          @include span-columns(6);
+          @include shift(6);
+          clear: left;
+        }
+
+        .slide__cta {
+          float: left;
+          @include shift(6);
+          clear: left;
+        }
+      }
+    }
+  }
+
+  @if $pattern == "logo" {
+
+    @if $modifier == "left" {
+
+      @include position(relative, null null null null);
+      @include padding(.5em null .5em null);
+      @include ⌂-max-size(50% null);
+      float: left;
+
+      .logo__heading {
+        display: none;
+      }
+
+      .logo__image {
+        display: block;
+        @include position(relative, null null null null);
+        @include size(null auto);
+        @include margin(null auto null auto);
+        max-width: 100%;
+        background: darken($color-theme-primary, 5%);
+      }
+
+      @include media($mq-desk) {
+
+        @include size(auto null);
+      }
+    }
+
+    @if $modifier == "center" {
+
+      @include position(relative, null null null null);
+      @include margin(null auto null auto);
+      @include padding(.5em null .5em null);
+      @include size(50% null);
+
+      .logo__heading {
+        display: none;
+      }
+
+      .logo__image {
+        display: block;
+        @include position(relative, null null null null);
+        @include size(null auto);
+        @include margin(null auto null auto);
+        max-width: 100%;
+        background: darken($color-theme-primary, 5%);
+      }
+
+      @include media($mq-desk) {
+
+      }
+    }
+
+    @if $modifier == "right" {
+
+      @include position(relative, null null null null);
+      @include margin(null auto null auto);
+      @include padding(.5em null .5em null);
+      @include size(50% null);
+
+      .logo__heading {
+        display: none;
+      }
+
+      .logo__image {
+        display: block;
+        @include position(relative, null null null null);
+        @include size(null auto);
+        @include margin(null auto null auto);
+        max-width: 100%;
+        background: darken($color-theme-primary, 5%);
+      }
+
+      @include media($mq-desk) {
+
+        @include size(auto null);
+        @include margin(null 0 null 0);
+        float: right;
+      }
+    }
+  }
+
+  @if $pattern == 'tile' {
+
+    @if $modifier == 'image-left' {
+
+      @if $context == 'desk' {
+
+        @include media($mq-desk) {
+
+          .tile__image {
+            @include size(200px);
+            padding-bottom:0;
+            background-position:50% 50%;
+            display: table-cell;
+            border-bottom: none;
+            border-right: 1px solid $color-border;
+          }
+
+          .tile__content {
+            display: table-cell;
+          }
+        }
+      }
+    }
+  }
+}

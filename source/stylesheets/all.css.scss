@@ -1,0 +1,81 @@
+// Library: Bourbon
+@import "dependencies/bourbon/bourbon";
+
+// Dependency: Grid Variables & Mixins
+@import "dependencies/grid";
+
+// Library: Neat
+@import "dependencies/neat/neat";
+
+// Dependency: Colors
+@import "dependencies/color";
+
+// Dependency: Typography
+@import "dependencies/typography";
+
+// Helpers
+@import "helpers/mixins";
+@import "helpers/resets";
+
+// Dependency: Fontello
+@import "dependencies/fontello";
+
+// Dependency: Zenburn
+@import "dependencies/zenburn";
+
+// Foundational Reset
+@import "foundation/block";
+@import "foundation/forms";
+@import "foundation/headings";
+@import "foundation/inline";
+@import "foundation/inputs";
+@import "foundation/lists";
+@import "foundation/media";
+@import "foundation/site";
+@import "foundation/tables";
+
+// Replace development sheet with component sheets on production prep
+@import "components/development";
+
+html, body {
+  @include ⌂-background($color-white, 1);
+  @extend %font-sans-serif-book;
+  color: $color-text;
+  font-size: $base-font-size-px-mobile;
+  @include size(null 100%);
+  @include media($mq-lap) {
+    font-size: $base-font-size-px-tablet;
+  }
+  @include media($mq-desk) {
+    font-size: $base-font-size-px-desktop;
+  }
+}
+
+main {
+  @include size(100% 100%);
+}
+
+div {
+  @include position(absolute, 0 0 0 0);
+  @include size(null 1em);
+  @include margin(auto auto auto auto);
+  @include animation-name(blurry);
+  @include animation-duration(5s);
+  @include animation-timing-function(linear);
+  @include animation-iteration-count(infinite);
+  text-align: center;
+}
+
+span {
+  color: red;
+  font-weight:bold;
+}
+
+@include keyframes(blurry) {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

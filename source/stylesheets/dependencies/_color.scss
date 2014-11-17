@@ -1,0 +1,31 @@
+// Colors | Descriptive
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-blue: #003365;
+$color-grey: #6D6D6D;
+$color-green: #003F2C;
+$color-yellow: #FDF1B5;
+
+// Colors | Theme
+$color-theme-primary: $color-green;
+$color-theme-secondary: $color-yellow;
+
+// Colors | Semantic
+$color-text: $color-grey;
+$color-text-invert: $color-white;
+$color-text-link: $color-theme-primary;
+$color-text-link-hover: darken($color-text-link, 15%);
+$color-heading: $color-theme-primary;
+$color-heading-invert: $color-white;
+
+$color-header-background: $color-white;
+
+$color-navigation-background: $color-yellow;
+$color-navigation-item: $color-yellow;
+$color-navigation-item-hover: $color-yellow;
+$color-navigation-text: $color-text;
+$color-navigation-text-hover: $color-text;
+
+$color-toggle-navigation: $color-green;
+$color-toggle-navigation-hover: $color-green;
+$color-toggle-navigation-active: $color-green;
