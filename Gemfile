@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 # Ruby - Version
-ruby "2.1.2"
+ruby "2.1.4"
 
 # Middleman Core
 gem "middleman-core", "3.3.5"
