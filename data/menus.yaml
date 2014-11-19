@@ -1,11 +1,9 @@
 navigation:
-  - title: About
-    link: /about
-  - title: Blog
-    link: /blog
-  - title: News
-    link: /news
-  - title: Contact
-    link: /contact
-  - title: Jobs
-    link: /jobs
+  - title: Is Q
+    link: /is/q
+  - title: Is K
+    link: /is/k
+  - title: Is Thinking
+    link: /is/thinking
+  - title: Is Here
+    link: /is/here
